@@ -2,12 +2,13 @@ import requests
 import json
 
 def test_successful_request_returns_200():
-    url = 'https://example.com/api'      response = requests.get(url)
+    url = 'https://petstore.swagger.io/'     
+    response = requests.get(url)
     assert response.status_code == 200, f"Expected status code 200, but got {response.status_code}"
 
 
 def test_successful_request_returns_valid_json():
-    url = 'https://example.com/api'  
+    url = 'https://petstore.swagger.io/'  
     response = requests.get(url)
     
     assert response.status_code == 200, f"Expected status code 200, but got {response.status_code}"
@@ -21,7 +22,7 @@ def test_successful_request_returns_valid_json():
 
 
 def test_invalid_request_returns_correct_http_status_code():
-    url = 'https://example.com/api'  
+    url = 'https://petstore.swagger.io/'  
     invalid_params = {'param1': 'value1', 'param2': 'value2'}  
 
     response = requests.get(url, params=invalid_params)
